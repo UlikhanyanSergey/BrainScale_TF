@@ -22,6 +22,3 @@ resource "aws_security_group" "SecGroup" {
     name = "SecurityGroup"
   }
 }
-
-
-
