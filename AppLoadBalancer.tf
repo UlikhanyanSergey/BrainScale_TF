@@ -43,5 +43,5 @@ resource "aws_autoscaling_attachment" "asg_attach3" {
 }
 
 output "ALB_DNS_Name" {
-  value = aws_lb.alb.name
+  value = aws_lb.alb.dns_name
 }

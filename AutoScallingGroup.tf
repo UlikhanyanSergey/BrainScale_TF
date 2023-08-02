@@ -1,9 +1,9 @@
 # Autoscaling Group
 resource "aws_autoscaling_group" "asg" {
   name_prefix               = "myasg-"
-  desired_capacity          = 3
-  max_size                  = 4
-  min_size                  = 3
+  desired_capacity          = 2
+  max_size                  = 3
+  min_size                  = 2
   vpc_zone_identifier       = [aws_subnet.Public1.id, aws_subnet.Public2.id]
   health_check_type         = "EC2"
   health_check_grace_period = 300
@@ -47,4 +47,4 @@ resource "aws_launch_template" "my_launch_template" {
   tags = {
     Name = "AppServer"
   }
-  }
+}
