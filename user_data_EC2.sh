@@ -1,6 +1,7 @@
 #!/bin/bash
-sudo apt update
 
+#Installing Docker
+sudo apt update
 sudo apt install apt-transport-https -y
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
@@ -10,13 +11,15 @@ sudo gpasswd -a ubuntu docker
 newgrp docker
 sudo service docker enable
 
+
+#Installing AWS_CLI
 sudo apt install awscli -y
 
+
+#Creating Dockerfile
 sudo mkdir -p /app
 cd /app
 git clone https://github.com/brainscalesolutions/brainscale-simple-app.git
-#aws ecr get-login-password --region eu-central-1 | docker login --username AWS --password-stdin 421279864461.dkr.ecr.eu-central-1.amazonaws.com/my-app:latest
-#docker run -d -p 3000:3000 421279864461.dkr.ecr.eu-central-1.amazonaws.com/my-app:latest
 
 cat << 'DOCKERFILE_CONTENT' > /app/Dockerfile
  # Use the Node.js image
@@ -42,5 +45,11 @@ EXPOSE 3000
 CMD ["node", "app.js"]
 DOCKERFILE_CONTENT
 
+
+#Building Docker Image
 sudo docker build -t my_app:latest .
-sudo docker run -d -p 3000:3000 my_app:latest
+
+
+#Pushing Docker Image
+
+
