@@ -3,7 +3,7 @@ resource "aws_lb" "alb" {
   name               = "alb"
   internal           = false
   load_balancer_type = "application"
- # security_groups    = [aws_security_SecGroup.id]
+  security_groups    = [aws_security_group.SecGroup.id]
   subnets            = [aws_subnet.Public1.id, aws_subnet.Public2.id]
 }
 
