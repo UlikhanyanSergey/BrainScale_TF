@@ -36,6 +36,9 @@ resource "aws_launch_template" "my_launch_template" {
   description            = "My Launch template"
   image_id               = "ami-0ab1a82de7ca5889c"
   instance_type          = "t2.micro"
+  iam_instance_profile {
+    name = aws_iam_instance_profile.ecr_full_access_profile.name
+  }
   vpc_security_group_ids = [aws_security_group.SecGroup.id]
   key_name               = "InternBrainScale-key"
   user_data              = filebase64("user_data.sh")
