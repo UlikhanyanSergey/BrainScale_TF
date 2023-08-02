@@ -45,6 +45,7 @@ resource "aws_launch_template" "my_launch_template" {
   ebs_optimized          = false
   update_default_version = true
   tags = {
-    Name = "AppServer"
+    Environment = "Production"
+    Project     = "AppServer"
   }
 }

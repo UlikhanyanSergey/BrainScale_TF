@@ -1,3 +1,4 @@
+#ECR repository for Docker Image
 resource "aws_ecr_repository" "ecr_repo" {
   name = "container-repo"
 }
