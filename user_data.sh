@@ -12,8 +12,35 @@ sudo service docker enable
 
 sudo apt install awscli -y
 
+sudo mkdir -p /app
+cd /app
 git clone https://github.com/brainscalesolutions/brainscale-simple-app.git
 #aws ecr get-login-password --region eu-central-1 | docker login --username AWS --password-stdin 421279864461.dkr.ecr.eu-central-1.amazonaws.com/my-app:latest
 #docker run -d -p 3000:3000 421279864461.dkr.ecr.eu-central-1.amazonaws.com/my-app:latest
-docker build -t my_app:latest .
-docker run -d -p 3000:3000 my_app:latest
+
+cat << 'DOCKERFILE_CONTENT' > /app/Dockerfile
+ # Use the Node.js image
+FROM node:14
+
+# Set the working directory
+WORKDIR /app
+
+# Install the application dependencies
+RUN npm install
+RUN npm install express ejs
+
+# Copy the app.js file to the container
+COPY brainscale-simple-app/app.js .
+
+# Copy the views directory to the container
+COPY brainscale-simple-app/views ./views
+
+# Expose port 3000
+EXPOSE 3000
+
+# Start the Node.js application
+CMD ["node", "app.js"]
+DOCKERFILE_CONTENT
+
+sudo docker build -t my_app:latest .
+sudo docker run -d -p 3000:3000 my_app:latest
