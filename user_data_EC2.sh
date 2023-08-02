@@ -51,5 +51,6 @@ sudo docker build -t my_app:latest .
 
 
 #Pushing Docker Image
-
-
+aws ecr get-login-password --region eu-central-1 | docker login --username AWS --password-stdin 421279864461.dkr.ecr.eu-central-1.amazonaws.com
+docker tag my_app:latest 421279864461.dkr.ecr.eu-central-1.amazonaws.com/container-repo:latest
+docker push 421279864461.dkr.ecr.eu-central-1.amazonaws.com/container-repo:latest

@@ -9,6 +9,6 @@ resource "aws_instance" "ec2_instance" {
   vpc_security_group_ids = [aws_security_group.SecGroup.id]
   user_data              = filebase64("user_data_EC2.sh")
   tags = {
-    Name = "EC2Docker"
+    Name = "DockerServer"
   }
 }

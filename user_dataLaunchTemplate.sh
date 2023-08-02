@@ -16,5 +16,5 @@ sudo service docker enable
 sudo apt install awscli -y
 
 #Pulling Docker image from ECR and running 
-#aws ecr get-login-password --region eu-central-1 | docker login --username AWS --password-stdin 421279864461.dkr.ecr.eu-central-1.amazonaws.com/my-app:latest
-#docker run -d -p 3000:3000 421279864461.dkr.ecr.eu-central-1.amazonaws.com/my-app:latest
+aws ecr get-login-password --region eu-central-1 | docker login --username AWS --password-stdin 421279864461.dkr.ecr.eu-central-1.amazonaws.com/container-repo:latest
+docker run -d -p 3000:3000 421279864461.dkr.ecr.eu-central-1.amazonaws.com/container-repo:latest

@@ -41,7 +41,10 @@ resource "aws_launch_template" "my_launch_template" {
   }
   vpc_security_group_ids = [aws_security_group.SecGroup.id]
   key_name               = "InternBrainScale-key"
-  user_data              = filebase64("user_data.sh")
+  user_data              = filebase64("user_dataLaunchTemplate.sh")
   ebs_optimized          = false
   update_default_version = true
+  tags = {
+    Name = "AppServer"
+  }
   }
