@@ -7,7 +7,7 @@ resource "aws_instance" "ec2_instance" {
   key_name               = "InternBrainScale-key"
   subnet_id              = aws_subnet.Public1.id
   vpc_security_group_ids = [aws_security_group.SecGroup.id]
-  user_data              = filebase64("user_data_EC2.sh")
+  user_data              = filebase64("../UserData/user_data_EC2.sh")
   tags = {
     Name = "DockerServer"
   }
