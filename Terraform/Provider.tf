@@ -9,7 +9,7 @@ terraform {
 }
 
 provider "aws" {
-  region = "eu-central-1"
+  region = var.region
   #access_key  = "exported"
   #secret_key  = "exported"
 }

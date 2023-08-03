@@ -2,9 +2,8 @@
 resource "aws_iam_policy" "ecr_access" {
   name        = "ECRAccessPolicy"
   description = "Access to Amazon ECR"
-
-  policy = jsonencode({
-    Version = "2012-10-17"
+  policy      = jsonencode({
+    Version   = "2012-10-17"
     Statement = [
       {
         Effect   = "Allow"
@@ -28,11 +27,11 @@ resource "aws_iam_instance_profile" "ecr_full_access_profile" {
   name = "ECRFullAccessRole"
   
   assume_role_policy = jsonencode({
-    Version = "2012-10-17"
+    Version          = "2012-10-17"
     Statement = [
       {
-        Action = "sts:AssumeRole"
-        Effect = "Allow"
+        Action    = "sts:AssumeRole"
+        Effect    = "Allow"
         Principal = {
           Service = "ec2.amazonaws.com"
         }

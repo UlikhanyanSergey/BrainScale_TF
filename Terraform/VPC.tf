@@ -16,7 +16,7 @@ resource "aws_subnet" "Public1" {
   vpc_id                  = aws_vpc.VPC_ECR.id
   cidr_block              = "10.0.0.0/26"
   map_public_ip_on_launch = true
-  availability_zone       = "eu-central-1a"
+  availability_zone       = var.first_zone
   tags   = {
     Name = "VPC_Public1"
   }
@@ -27,7 +27,7 @@ resource "aws_subnet" "Public2" {
   vpc_id                  = aws_vpc.VPC_ECR.id
   cidr_block              = "10.0.1.0/26"
   map_public_ip_on_launch = true
-  availability_zone       = "eu-central-1b"
+  availability_zone       = var.second_zone
   tags   = {
     Name = "VPC_Public2"
   }

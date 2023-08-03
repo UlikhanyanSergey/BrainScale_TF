@@ -34,13 +34,13 @@ resource "aws_autoscaling_group" "asg" {
 resource "aws_launch_template" "my_launch_template" {
   name                   = "my-launch-template"
   description            = "My Launch template"
-  image_id               = "ami-0ab1a82de7ca5889c"
-  instance_type          = "t2.micro"
+  image_id               = var.image_id
+  instance_type          = var.instance_type
   iam_instance_profile {
     name = aws_iam_instance_profile.ecr_full_access_profile.name
   }
   vpc_security_group_ids = [aws_security_group.SecGroup.id]
-  key_name               = "InternBrainScale-key"
+  key_name               = var.key
   user_data              = filebase64("../UserData/user_dataLaunchTemplate.sh")
   ebs_optimized          = false
   update_default_version = true
