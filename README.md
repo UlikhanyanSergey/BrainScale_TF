@@ -20,7 +20,7 @@ Before running this Terraform configuration, ensure you have the following in pl
 
 - Ensure that the ```user_data_*.sh``` files contain the correct credentials and configuration for creating Docker images and pushing them to the ECR repository.
 
-- Set your project path in the ```deploy.sh``` script to execute Terraform commands from the correct location.
+- Set your project path in the ```deploy.sh```(and```destroy.sh```) script to execute Terraform commands from the correct location.
 
 ## Deploy
 
@@ -46,4 +46,4 @@ Please note that destroying the infrastructure will also delete the Docker image
 ## **Note**
 Make sure to set up the necessary environment variables for AWS CLI or include access keys in the ```Provider.tf``` file to ensure proper authentication and access to AWS resources.
 Ensure that all ```user_data``` scripts contain the correct configurations for creating and pushing Docker images to the ECR repository.
-Customize the _Vars.tf_ file and other configurations based on your specific project requirements.
+Customize the ```Vars.tf``` file and other configurations based on your specific project requirements.
