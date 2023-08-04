@@ -9,7 +9,9 @@
 Before running this Terraform configuration, ensure you have the following in place:
 
 1. AWS CLI: Install and configure the AWS CLI on your local machine with appropriate access credentials.
-2. Terraform: Install Terraform on the local machine where you plan to run the Terraform script.
+   https://docs.aws.amazon.com/cli/v1/userguide/cli-chap-install.html
+3. Terraform: Install Terraform on the local machine where you plan to run the Terraform script.
+   https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli
 
 ## Usage
 
