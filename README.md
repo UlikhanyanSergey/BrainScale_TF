@@ -44,6 +44,7 @@ To destroy the project and remove all resources created by this Terraform config
 
     
 Please note that destroying the infrastructure will also delete the Docker image stored in the ECR repository.
+![image](https://github.com/UlikhanyanSergey/BrainScale_TF/assets/139685392/ac42928d-5c04-4058-9fc7-b774ce941f34)
 
 ## **Note**
 Make sure to set up the necessary environment variables for AWS CLI or include access keys in the ```Provider.tf``` file to ensure proper authentication and access to AWS resources.
