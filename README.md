@@ -4,7 +4,8 @@
 **This Terraform configuration sets up an Application Load Balancer (ALB) on AWS with an associated target group and an Auto Scaling Group (ASG) to host instances of a Dockerized web application. The infrastructure includes a Virtual Private Cloud (VPC) with public subnets and security groups allowing inbound traffic on ports 22, 80, and 3000.**
 
 
-![image](https://github.com/UlikhanyanSergey/BrainScale_TF/assets/139685392/ac42928d-5c04-4058-9fc7-b774ce941f34)
+![image](https://github.com/UlikhanyanSergey/BrainScale_TF/assets/139685392/6396dc6a-5139-4217-8063-c6a169710531)
+
 
 ## Prerequisites
 Before running this Terraform configuration, ensure you have the following in place:
